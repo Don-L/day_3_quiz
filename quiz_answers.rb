@@ -125,37 +125,37 @@ my_hash[:four] = 4
 
 # C. Given the following data structure:
 
-  # users = {
-  #   "Jonathan" => {
-  #     :twitter => "jonnyt",
-  #     :favourite_numbers => [12, 42, 75, 12, 5],
-  #     :home_town => "Stirling",
-  #     :pets => {
-  #       "fluffy" => :cat,
-  #       "fido" => :dog,
-  #       "spike" => :dog
-  #     }
-  #   },
-  #   "Erik" => {
-  #     :twitter => "eriksf",
-  #     :favorite_numbers => [8, 12, 24],
-  #     :home_town => "Linlithgow",
-  #     :pets => {
-  #       "blinky" => :fish,
-  #       "kevin" => :fish,
-  #       "spike" => :dog,
-  #       "fang" => :parrot
-  #     }
-  #   },
-  #   "Anil" => {
-  #     :twitter => "bridgpally",
-  #     :favorite_numbers => [12, 14, 85, 88],
-  #     :home_town => "Dunbar",
-  #     :pets => {
-  #       :colin => :snake
-  #     }
-  #   },
-  # }
+  users = {
+    "Jonathan" => {
+      :twitter => "jonnyt",
+      :favourite_numbers => [12, 42, 75, 12, 5],
+      :home_town => "Stirling",
+      :pets => {
+        "fluffy" => :cat,
+        "fido" => :dog,
+        "spike" => :dog
+      }
+    },
+    "Erik" => {
+      :twitter => "eriksf",
+      :favorite_numbers => [8, 12, 24],
+      :home_town => "Linlithgow",
+      :pets => {
+        "blinky" => :fish,
+        "kevin" => :fish,
+        "spike" => :dog,
+        "fang" => :parrot
+      }
+    },
+    "Anil" => {
+      :twitter => "bridgpally",
+      :favorite_numbers => [12, 14, 85, 88],
+      :home_town => "Dunbar",
+      :pets => {
+        :colin => :snake
+      }
+    },
+  }
 
 
 # Return Jonathan's Twitter handle (i.e. the string "jonnyt")
@@ -185,12 +185,16 @@ users['Erik'][:favorite_numbers].min
 
 # Return an array of Anil's favorite numbers that are even
 
-for num in users['Anil'][:favorite_numbers]
-  array = []
+def return_array(array1, array2)
+for num in array2
   if num%2 == 0
-    array.push(num)
+    array1.push(num)
   end
 end
+return array1
+end
+
+puts return_array([], users['Anil'][:favorite_numbers])
 
 
 # Return an array of Jonathans favourite numbers, sorted in ascending order and excluding duplicates
